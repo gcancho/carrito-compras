@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./App.css";
 import styled from "styled-components";
 import { NavLink, Route, Routes } from "react-router-dom";
@@ -6,6 +6,7 @@ import Inicio from "./componentes/Inicio";
 import Blog from "./componentes/Blog";
 import Tienda from "./componentes/Tienda";
 import Error404 from "./componentes/Error404";
+import Carrito from "./componentes/Carrito";
 
 const App = () => {
   const productos = [
@@ -14,6 +15,7 @@ const App = () => {
     { id: 3, nombre: "Producto 3" },
     { id: 4, nombre: "Producto 4" },
   ];
+  const [carrito, cambiarCarrito] = useState([]);
 
   return (
     <Contenedor>
@@ -31,7 +33,9 @@ const App = () => {
           <Route path="*" element={<Error404 />} />
         </Routes>
       </main>
-      <aside></aside>
+      <aside>
+        <Carrito carrito={carrito} />
+      </aside>
     </Contenedor>
   );
 };
