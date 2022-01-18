@@ -1,15 +1,11 @@
 import React from "react";
+import Productos from "./Productos";
 
-const Tienda = () => {
+const Tienda = ({ productos }) => {
   return (
     <div>
       <h1>Tienda</h1>
-      <p>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias
-        eaque voluptatem quibusdam culpa dicta rem nobis, corporis recusandae
-        maiores doloremque nihil, at maxime aliquid excepturi, a soluta deserunt
-        aperiam veniam.
-      </p>
+      <Productos productos={productos} />
     </div>
   );
 };
